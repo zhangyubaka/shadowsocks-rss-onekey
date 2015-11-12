@@ -4,9 +4,9 @@ echo "One key script by AmedaGintoki@mikelei.me"
 echo "Thanks to breakwa11 and clowwindy"
 
 if grep -Eqi "CentOS" /etc/issue; then
-    CentOS_Install
+    ins="CentOS"
 elif grep -Eqi "Ubuntu" /etc/issue; then
-    Ubuntu_Install
+    ins="Ubuntu"
 else
     Echo_Red "Your distribution is not supported, please use Ubuntu or CentOS to install"
     exit 1
@@ -26,7 +26,6 @@ Ubuntu_Install()
     pip install cymysql
     cd ~/
     git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
-    Config
 }
 
 Config()
@@ -35,3 +34,14 @@ Config()
     Echo_Red "For more infomation please go to https://github.com/breakwa11/shadowsocks-rss/wiki/Server-Setup(manyuser)"
     exit 1
 }
+
+case "${ins}" in
+    CentOS)
+        CentOS_Install
+        Config
+        ;;
+    Ubuntu)
+        Ubuntu_Install
+        Config
+        ;;
+esac
