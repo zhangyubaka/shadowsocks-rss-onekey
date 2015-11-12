@@ -3,17 +3,14 @@
 echo "One key script by AmedaGintoki@mikelei.me"
 echo "Thanks to breakwa11 and clowwindy"
 
-Get_Distribution()
-{
-    if grep -i "CentOS" /etc/issue; then
-        CentOS_install
-    elif grep -i "Ubuntu" /etc/issue; then
-        Ubuntu_install
-    else
-        Echo_Red "Your distribution is not supported, please use Ubuntu or CentOS to install"
-        exit 1
-    fi
-}
+if grep -Eqi "CentOS" /etc/issue; then
+    CentOS_install
+elif grep -Eqi "Ubuntu" /etc/issue; then
+    Ubuntu_install
+else
+    Echo_Red "Your distribution is not supported, please use Ubuntu or CentOS to install"
+    exit 1
+fi
 
 CentOS_install()
 {
