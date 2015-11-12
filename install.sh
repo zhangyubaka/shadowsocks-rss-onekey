@@ -14,7 +14,7 @@ fi
 
 CentOS_Install()
 {
-    Echo_Red "Sorry, CentOS is not supported now"
+    echo "Sorry, CentOS is not supported now"
     exit 1
 }
 
@@ -30,8 +30,8 @@ Ubuntu_Install()
 
 Config()
 {
-    Echo_Red "Sorry, function does not finish"
-    Echo_Red "For more infomation please go to https://github.com/breakwa11/shadowsocks-rss/wiki/Server-Setup(manyuser)"
+    echo "Sorry, function does not finish"
+    echo "For more infomation please go to https://github.com/breakwa11/shadowsocks-rss/wiki/Server-Setup(manyuser)"
     exit 1
 }
 
