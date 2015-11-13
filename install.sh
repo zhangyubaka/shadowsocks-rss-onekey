@@ -5,6 +5,11 @@
 echo "One key script by AmedaGintoki@mikelei.me"
 echo "Thanks to breakwa11 and clowwindy"
 
+if [ "$(id -u)" != "0" ]; then
+   echo "This script must be run as root" 1>&2
+   exit 1
+fi
+
 if grep -Eqi "Arch Linux" /etc/issue; then
     ins="Archlinux"
 elif grep -Eqi "CentOS" /etc/issue; then
@@ -75,10 +80,28 @@ Debian_Install()
 Config()
 {
     Optimize
-    echo "Sorry, function does not finish"
-    echo "For more infomation please go to https://github.com/breakwa11/shadowsocks-rss/wiki/Server-Setup(manyuser)"
+    echo "Please enter your mysql user and press [Enter]"
+    read user
+    echo "Please enter your mysql password and press [Enter]"
+    read pass
+    echo "Please enter your mysql ip and press [Enter]"
+    read ip
+    echo "Please enter mysql port and press [Enter]"
+    read port
+    echo "Please enter the db name and press [Enter]"
+    read db
+    rm -rf ~/shadowsocks/Config.py
+    cat > ~/shadowsocks/Config.py << EOF
+    MYSQL_HOST = '$ip'  
+    MYSQL_PORT = $port         
+    MYSQL_USER = '$user'         
+    MYSQL_PASS = '$pass'         
+    MYSQL_DB = '$db' 
+EOF
+    echo "Config file is create in ~/shadowsocks/Config.py"
     exit 1
 }
+
 
 case "${ins}" in
     CentOS)
