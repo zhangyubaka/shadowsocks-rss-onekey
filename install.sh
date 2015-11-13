@@ -97,7 +97,7 @@ Config()
     MYSQL_USER = '$user'         
     MYSQL_PASS = '$pass'         
     MYSQL_DB = '$db' 
-    EOF
+EOF
     echo "Config file is create in ~/shadowsocks/Config.py"
     exit 1
 }
