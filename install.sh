@@ -3,7 +3,7 @@
 echo "One key script by AmedaGintoki@mikelei.me"
 echo "Thanks to breakwa11 and clowwindy"
 
-if grep "Arch Linux" /etc/issue; then
+if grep -Eqi "Arch Linux" /etc/issue; then
     ins="Archlinux"
 elif grep -Eqi "CentOS" /etc/issue; then
     ins="CentOS"
@@ -39,8 +39,8 @@ CentOS_Install()
 Ubuntu_Install()
 {
     apt-get update && apt-get upgrade -y
-    apt-get install python-pip
-    apt-get install m2crypto git
+    apt-get install python-pip -y
+    apt-get install m2crypto git -y
     pip install cymysql
     cd ~/
     git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
