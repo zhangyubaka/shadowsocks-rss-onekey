@@ -1,5 +1,7 @@
 #!/bin/bash
 
+. include/optimize.sh
+
 echo "One key script by AmedaGintoki@mikelei.me"
 echo "Thanks to breakwa11 and clowwindy"
 
@@ -11,12 +13,10 @@ elif grep -Eqi "Ubuntu" /etc/issue; then
     ins="Ubuntu"
 elif grep -Eqi "Debian" /etc/issue; then
     ins="Debian"
-elif grep -Eqi "Debian" /etc/issue; then
-    ins="Debian"
 elif grep -Eqi "gentoo" /proc/version; then
     ins="Gentoo"
 else
-    echo "Your distribution is not supported, please use Ubuntu or CentOS or Archlinux or Gentoo or Debian to install"
+    echo "Your distribution is not supported, please use Ubuntu/Debian/CentOS/Gentoo/ArchLinux to install"
     exit 1
 fi
 
@@ -74,6 +74,7 @@ Debian_Install()
 
 Config()
 {
+    Optimize
     echo "Sorry, function does not finish"
     echo "For more infomation please go to https://github.com/breakwa11/shadowsocks-rss/wiki/Server-Setup(manyuser)"
     exit 1
