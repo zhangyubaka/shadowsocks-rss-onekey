@@ -4,6 +4,7 @@ A one key script to deploy [shadowsocks-rss](https://github.com/breakwa11/shadow
 
 ## Install
 `git clone https://github.com/mikelei8291/shadowsocks-rss-onekey.git`
+
 `bash install.sh`
 
 ---
