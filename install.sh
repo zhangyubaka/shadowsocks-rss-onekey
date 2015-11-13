@@ -1,8 +1,9 @@
 #!/bin/bash
 
 . include/optimize.sh
+. include/advanced_encryption.sh
 
-echo "One key script by AmedaGintoki@mikelei.me"
+echo "One key script by AmedaGintoki@mikelei.me and zhangyubaka@oao.moe"
 echo "Thanks to breakwa11 and clowwindy"
 
 if [ "$(id -u)" != "0" ]; then
