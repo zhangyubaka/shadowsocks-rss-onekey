@@ -3,14 +3,26 @@
 echo "One key script by AmedaGintoki@mikelei.me"
 echo "Thanks to breakwa11 and clowwindy"
 
-if grep -Eqi "CentOS" /etc/issue; then
+if grep "Arch Linux" /etc/issue; then
+    ins="Archlinux"
+elif grep -Eqi "CentOS" /etc/issue; then
     ins="CentOS"
 elif grep -Eqi "Ubuntu" /etc/issue; then
     ins="Ubuntu"
 else
-    Echo_Red "Your distribution is not supported, please use Ubuntu or CentOS to install"
+    echo "Your distribution is not supported, please use Ubuntu or CentOS or Archlinux to install"
     exit 1
 fi
+
+Archlinux_Install()
+{
+    pacman -Syu --noconfirm
+    pacman -S python-pip git --noconfirm
+    pip install cymysql
+    pip install m2crypto
+    cd ~/
+    git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
+}
 
 CentOS_Install()
 {
@@ -42,6 +54,10 @@ case "${ins}" in
         ;;
     Ubuntu)
         Ubuntu_Install
+        Config
+        ;;
+    Archlinux)
+        Archlinux_Install
         Config
         ;;
 esac
