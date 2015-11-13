@@ -30,20 +30,14 @@ Archlinux_Install()
 {
     pacman -Syu --noconfirm
     pacman -S python-pip git --noconfirm
-    pip install cymysql
     pip install m2crypto
-    cd ~/
-    git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
 }
 
 Gentoo_Install()
 {
     emerge --sync
     emerge dev-vcs/git dev-python/pip
-    pip install cymysql
     pip install m2crypto
-    cd ~/
-    git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
 }
 
 CentOS_Install()
@@ -52,9 +46,6 @@ CentOS_Install()
     yum -y install epel-release
     yum -y install python-pip
     yum -y install m2crypto git
-    pip install cymysql
-    cd ~/
-    git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
 }
 
 
@@ -63,9 +54,6 @@ Ubuntu_Install()
     apt-get update && apt-get upgrade -y
     apt-get install python-pip -y
     apt-get install m2crypto git -y
-    pip install cymysql
-    cd ~/
-    git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
 }
 
 Debian_Install()
@@ -73,9 +61,6 @@ Debian_Install()
     apt-get update && apt-get upgrade -y
     apt-get install python-pip -y
     apt-get install m2crypto git -y
-    pip install cymysql
-    cd ~/
-    git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
 }
 
 Config()
@@ -113,7 +98,6 @@ EOF
 case "${ins}" in
     CentOS)
         CentOS_Install
-        Config
         ;;
     Ubuntu)
         Ubuntu_Install
@@ -121,14 +105,16 @@ case "${ins}" in
         ;;
     Archlinux)
         Archlinux_Install
-        Config
         ;;
     Debian)
         Debian_Install
-        Config
         ;;
     Gentoo)
         Gentoo_Install
-        Config
         ;;
 esac
+
+pip install cymysql
+cd ~/
+git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
+Config
