@@ -9,3 +9,5 @@ A one key script to deploy [shadowsocks-rss](https://github.com/breakwa11/shadow
 
 ---
 Thank to [clowwindy](https://github.com/clowwindy) and [breakwa11](https://github.com/breakwa11)
+
+License: [GPLv3](https://github.com/mikelei8291/shadowsocks-rss-onekey/blob/master/LICENSE)
