@@ -43,9 +43,7 @@ Gentoo_Install()
 CentOS_Install()
 {
     yum -y update
-    yum -y install epel-release
-    yum -y install python-pip
-    yum -y install m2crypto git
+    yum -y install epel-release python-pip m2crypto git
 }
 
 
