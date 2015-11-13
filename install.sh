@@ -17,7 +17,7 @@ fi
 Archlinux_Install()
 {
     pacman -Syu --noconfirm
-    pacman -S python-pip git
+    pacman -S python-pip git --noconfirm
     pip install cymysql
     pip install m2crypto
     cd ~/
