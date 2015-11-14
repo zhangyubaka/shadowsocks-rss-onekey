@@ -14,7 +14,7 @@ fi
 
 if grep -Eqi "Arch Linux" /etc/issue; then
     ins="Archlinux"
-elif grep -Eqi "CentOS" /etc/issue; then
+elif grep -Eqi "CentOS" /etc/*-release; then
     ins="CentOS"
 elif grep -Eqi "Ubuntu" /etc/issue; then
     ins="Ubuntu"
