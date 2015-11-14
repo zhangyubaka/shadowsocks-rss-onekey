@@ -1,8 +1,8 @@
 [Todo]
-配置config.json
 使用service控制和开机自动运行
 
 [Finished]
 下载依赖
 自动优化
 配置Config.py
+配置config.json
