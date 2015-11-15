@@ -1,6 +1,6 @@
 #!/bin/bash
 
-function Optimize
+Optimize()
 {
     echo "# max open files
     fs.file-max = 51200

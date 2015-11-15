@@ -62,13 +62,6 @@ Debian_Install()
     apt-get install m2crypto git -y
 }
 
-pip install cymysql
-cd ~/
-git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
-
-Optimize
-Config
-
 case "${ins}" in
     CentOS)
         CentOS_Install
@@ -86,3 +79,10 @@ case "${ins}" in
         Gentoo_Install
         ;;
 esac
+
+pip install cymysql
+cd ~/
+git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
+
+Optimize
+Config
