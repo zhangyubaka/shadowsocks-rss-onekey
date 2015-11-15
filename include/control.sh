@@ -5,22 +5,22 @@ Control()
 cat > /etc/init.d/shadowsocks << EOF
 #!/bin/sh
 start(){
-    bash /root/shadowsocks/run.sh
+    bash ~/shadowsocks/run.sh
 }
 stop(){
-    bash /root/shadowsocks/stop.sh
+    bash ~/shadowsocks/stop.sh
 }
 status(){
-    bash /root/shadowsocks/tail.sh
+    bash ~/shadowsocks/tail.sh
 }
 log(){
-    cat /root/shadowsocks/ssserver.log
+    cat ~/shadowsocks/ssserver.log
 }
 clear(){
-    rm /root/shadowsocks/ssserver.log
+    rm ~/shadowsocks/ssserver.log
 }
 update(){
-    cd /root/shadowsocks/ && git pull
+    cd ~/shadowsocks/ && git pull
 }
 case "$1" in
 start)
