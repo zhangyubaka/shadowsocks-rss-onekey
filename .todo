@@ -1,0 +1,10 @@
+[Todo]
+使用service控制和开机自动运行
+obfs混淆方法的值改为选项而不是输入
+使用chacha20加密
+
+[Finished]
+下载依赖
+自动优化
+配置Config.py
+配置config.json
