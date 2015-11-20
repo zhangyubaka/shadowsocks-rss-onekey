@@ -51,6 +51,6 @@ restart)
     ;;
 esac"
 EOF
-chmod +x //etc/systemd/system/shadowsocks
+chmod +x /etc/systemd/system/shadowsocks
 systemctl enable shadowsocks
 }
