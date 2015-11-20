@@ -52,5 +52,5 @@ restart)
 esac"
 EOF
 chmod +x /etc/init.d/shadowsocks
-update-rc.d shadowsocks defaults
+systemctl enable shadowsocks
 }
