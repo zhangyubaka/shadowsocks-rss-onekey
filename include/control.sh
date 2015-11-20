@@ -2,7 +2,7 @@
 
 Control()
 {
-cat > /etc/init.d/shadowsocks << EOF
+cat > /etc/systemd/system/shadowsocks << EOF
 #!/bin/sh
 start(){
     bash ~/shadowsocks/run.sh
@@ -51,6 +51,6 @@ restart)
     ;;
 esac"
 EOF
-chmod +x /etc/init.d/shadowsocks
+chmod +x //etc/systemd/system/shadowsocks
 systemctl enable shadowsocks
 }
