@@ -1,8 +1,5 @@
 #!/bin/bash
 
-. include/optimize.sh
-. include/config.sh
-. include/advanced_encryption.sh
 
 echo "One key script by AmedaGintoki@mikelei.me and zhangyubaka@oao.moe"
 echo "Thanks to breakwa11 and clowwindy"
@@ -11,6 +8,25 @@ if [ "$(id -u)" != "0" ]; then
    echo "This script must be run as root" 1>&2
    exit 1
 fi
+
+echo "Please type your system init type [Upstart|Systemd]"
+	read $inittype
+
+if [$inittype == Upstart]
+	then . include/control-upstart.sh
+elif [$inittype == upstart]
+	then . include/control-upstart.sh
+elif [$inittype == Systemd]
+	then . include/control.sh
+elif [$inittype == systemd]
+	then . include/control.sh	
+else 
+	echo "Cannot identity your init type"
+	exit 1
+
+. include/optimize.sh
+. include/config.sh
+. include/advanced_encryption.sh
 
 if grep -Eqi "Arch Linux" /etc/issue; then
     ins="Archlinux"
