@@ -1,5 +1,4 @@
 #!/bin/bash
-
 Control_Systemd()
 {
 cat > /etc/systemd/system/shadowsocks << EOF
@@ -49,7 +48,7 @@ restart)
     echo "Usage: $0 {start|restart|stop|status|log|clear|update}"
     exit 1
     ;;
-esac"
+esac
 EOF
 chmod +x /etc/systemd/system/shadowsocks
 systemctl enable shadowsocks
@@ -104,7 +103,7 @@ restart)
     echo "Usage: $0 {start|restart|stop|status|log|clear|update}"
     exit 1
     ;;
-esac"
+esac
 EOF
 chmod +x /etc/init.d/shadowsocks
 update-rc.d shadowsocks defaults

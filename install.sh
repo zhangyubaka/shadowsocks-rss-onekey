@@ -10,7 +10,7 @@ fi
 
 . include/advanced_encryption.sh
 . include/config.sh
-. include/control.sh
+. include/init.sh
 . include/optimize.sh
 
 if grep -Eqi "Arch Linux" /etc/issue; then
@@ -81,9 +81,8 @@ case "${ins}" in
 esac
 
 pip install cymysql
-cd ~/
-git clone -b manyuser https://github.com/breakwa11/shadowsocks.git
+git clone -b manyuser https://github.com/breakwa11/shadowsocks.git ~/shadowsocks
 
-Init_Choice
 Optimize
+Init_Choice
 Config
