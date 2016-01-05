@@ -8,10 +8,10 @@ if [ "$(id -u)" != "0" ]; then
    exit 1
 fi
 
-. include/advanced_encryption.sh
-. include/config.sh
-. include/init.sh
-. include/optimize.sh
+. modules/advanced_encryption.sh
+. modules/config.sh
+. modules/init.sh
+. modules/optimize.sh
 
 if grep -Eqi "Arch Linux" /etc/issue; then
     ins="Archlinux"
