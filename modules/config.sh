@@ -25,7 +25,7 @@ Config()
     read obfs_param
 
     rm -f ~/shadowsocks/Config.py
-    rm -f ~/shadowsocks/config.json
+    #rm -f ~/shadowsocks/config.json
 
     cat > ~/shadowsocks/Config.py << EOF
 #Config
@@ -43,7 +43,7 @@ MANAGE_PORT = 23333
 EOF
     echo "Config file is create in ~/shadowsocks/Config.py"
 
-    cat > ~/shadowsocks/config.json << EOF
+    cat > ~/shadowsocks/user-config.json << EOF
 {
     "server": "0.0.0.0",
     "server_ipv6": "::",
@@ -61,5 +61,5 @@ EOF
     "workers": 1
 }
 EOF
-    echo "Config file is create in ~/shadowsocks/config.json"
+    echo "Config file is create in ~/shadowsocks/user-config.json"
 }
